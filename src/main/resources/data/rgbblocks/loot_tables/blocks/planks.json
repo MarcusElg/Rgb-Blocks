@@ -1,0 +1,33 @@
+{
+	"type": "minecraft:block",
+	"pools": [{
+		"rolls": 1,
+		"entries": [{
+			"type": "minecraft:item",
+			"name": "rgbblocks:planks",
+			"functions": [{
+				"function": "minecraft:copy_nbt",
+				"source": "block_entity",
+				"ops": [{
+						"source": "hue",
+						"target": "hue",
+						"op": "replace"
+					},
+					{
+						"source": "saturation",
+						"target": "saturation",
+						"op": "replace"
+					},
+					{
+						"source": "brightness",
+						"target": "brightness",
+						"op": "replace"
+					}
+				]
+			}],
+			"conditions": [{
+				"condition": "minecraft:survives_explosion"
+			}]
+		}]
+	}]
+}

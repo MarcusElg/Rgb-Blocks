@@ -1,0 +1,15 @@
+{
+	"itemGroup.rgbblocks.rgbblocks":"Rgb Blocks",
+
+	"block.rgbblocks.terracotta":"Rgb Terracotta",
+	"block.rgbblocks.wool":"Rgb Wool",
+	"block.rgbblocks.carpet":"Rgb Carpet",
+	"block.rgbblocks.planks":"Rgb Planks",
+	"block.rgbblocks.glass":"Rgb Glass",
+	"block.rgbblocks.concrete":"Rgb Concrete",
+	"block.rgbblocks.concrete_powder":"Rgb Concrete Powder",
+	
+	"command.rgb.toofewarguments": "Incomplete (expected 3 integers)",
+	"command.rgb.wrongitem": "The item that you are currently holding is not a rgb block",
+	"command.rgb.sucess": "Sucessfully changed hue, saturation and brightness of the item that you are currently holding"
+}
