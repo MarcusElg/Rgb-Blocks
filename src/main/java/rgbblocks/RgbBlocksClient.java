@@ -16,6 +16,18 @@ public class RgbBlocksClient implements ClientModInitializer {
 		registerBlockColour(RgbBlocks.rgbConcrete);
 		registerBlockColour(RgbBlocks.rgbConcretePowder);
 		registerBlockColour(RgbBlocks.rgbCarpet);
+		
+		registerBlockColour(RgbBlocks.rgbTerracottaSlab);
+		registerBlockColour(RgbBlocks.rgbWoolSlab);
+		registerBlockColour(RgbBlocks.rgbPlanksSlab);
+		registerBlockColour(RgbBlocks.rgbGlassSlab);
+		registerBlockColour(RgbBlocks.rgbConcreteSlab);
+		
+		registerBlockColour(RgbBlocks.rgbTerracottaStairs);
+		registerBlockColour(RgbBlocks.rgbWoolStairs);
+		registerBlockColour(RgbBlocks.rgbPlanksStairs);
+		registerBlockColour(RgbBlocks.rgbGlassStairs);
+		registerBlockColour(RgbBlocks.rgbConcreteStairs);
 	}
 
 	public void registerBlockColour(Block block) {

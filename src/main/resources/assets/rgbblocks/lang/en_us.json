@@ -9,6 +9,18 @@
 	"block.rgbblocks.concrete":"Rgb Concrete",
 	"block.rgbblocks.concrete_powder":"Rgb Concrete Powder",
 	
+	"block.rgbblocks.terracotta_slab":"Rgb Terracotta Slab",
+	"block.rgbblocks.wool_slab":"Rgb Wool Slab",
+	"block.rgbblocks.planks_slab":"Rgb Planks Slab",
+	"block.rgbblocks.glass_slab":"Rgb Glass Slab",
+	"block.rgbblocks.concrete_slab":"Rgb Concrete Slab",
+	
+	"block.rgbblocks.terracotta_stairs":"Rgb Terracotta Stairs",
+	"block.rgbblocks.wool_stairs":"Rgb Wool Stairs",
+	"block.rgbblocks.planks_stairs":"Rgb Plank Stairs",
+	"block.rgbblocks.glass_stairs":"Rgb Glass Stairs",
+	"block.rgbblocks.concrete_stairs":"Rgb Concrete Stairs",
+	
 	"command.rgb.toofewarguments": "Incomplete (expected 3 integers)",
 	"command.rgb.wrongitem": "The item that you are currently holding is not a rgb block",
 	"command.rgb.sucess": "Sucessfully changed hue, saturation and brightness of the item that you are currently holding"

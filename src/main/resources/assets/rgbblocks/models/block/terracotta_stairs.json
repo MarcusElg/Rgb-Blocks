@@ -1,0 +1,8 @@
+{
+    "parent": "rgbblocks:block/stairs",
+    "textures": {
+        "bottom": "rgbblocks:terracotta",
+        "top": "rgbblocks:terracotta",
+        "side": "rgbblocks:terracotta"
+    }
+}

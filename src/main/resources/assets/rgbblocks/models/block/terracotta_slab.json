@@ -1,0 +1,8 @@
+{
+    "parent": "rgbblocks:block/slab",
+    "textures": {
+        "bottom": "rgbblocks:terracotta",
+        "top": "rgbblocks:terracotta",
+        "side": "rgbblocks:terracotta"
+    }
+}

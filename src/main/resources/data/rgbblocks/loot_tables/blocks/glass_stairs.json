@@ -1,0 +1,49 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "rgbblocks:glass_stairs"
+        }
+      ],
+      "functions": [{
+				"function": "minecraft:copy_nbt",
+				"source": "block_entity",
+				"ops": [{
+						"source": "hue",
+						"target": "hue",
+						"op": "replace"
+					},
+					{
+						"source": "saturation",
+						"target": "saturation",
+						"op": "replace"
+					},
+					{
+						"source": "brightness",
+						"target": "brightness",
+						"op": "replace"
+					}
+				]
+			}],
+      "conditions": [
+        {
+          "condition": "minecraft:match_tool",
+          "predicate": {
+            "enchantments": [
+              {
+                "enchantment": "minecraft:silk_touch",
+                "levels": {
+                  "min": 1
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
