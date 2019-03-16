@@ -22,6 +22,8 @@
 	"block.rgbblocks.concrete_stairs":"Rgb Concrete Stairs",
 	
 	"command.rgb.toofewarguments": "Incomplete (expected 3 integers)",
+	"command.rgb.nosubcommand":"Expected set, add or get",
 	"command.rgb.wrongitem": "The item that you are currently holding is not a rgb block",
-	"command.rgb.sucess": "Sucessfully changed hue, saturation and brightness of the item that you are currently holding"
+	"command.rgb.wrongblock":"The block that you are currently looking at is not a rgb block",
+	"command.rgb.sucess": "Sucessfully changed the color of the item that you are currently holding"
 }

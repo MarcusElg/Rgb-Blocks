@@ -2,7 +2,7 @@
   "id": "rgbblocks",
   "name": "Rgb Blocks",
   "description": "Wool, terracotta, concrete and more in all the colours!",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "side": "universal",
   "initializers": [
     "rgbblocks.RgbBlocks",
