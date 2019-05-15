@@ -6,8 +6,8 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.BlockWithEntity;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.entity.EntityContext;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.VerticalEntityPosition;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
@@ -25,7 +25,7 @@ public class RgbCarpet extends BlockWithEntity {
 	}
 
 	public VoxelShape getOutlineShape(BlockState blockState_1, BlockView blockView_1, BlockPos blockPos_1,
-			VerticalEntityPosition verticalEntityPosition_1) {
+			EntityContext entityContext) {
 		return SHAPE;
 	}
 

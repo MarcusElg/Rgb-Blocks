@@ -53,7 +53,7 @@ public class RgbBlocksClient implements ClientModInitializer {
 			} else {
 				return Color.HSBtoRGB(0, 0, 1);
 			}
-		}, block.getItem());
+		}, block.asItem());
 	}
 
 }

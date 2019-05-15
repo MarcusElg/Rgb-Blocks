@@ -9,10 +9,10 @@ import net.minecraft.block.BlockRenderLayer;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.block.BlockItem;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
@@ -79,7 +79,7 @@ public class RgbBlocks implements ModInitializer {
 		FlammableBlockRegistry.getDefaultInstance().add(rgbWoolStairs, 30, 60);
 
 		CommandRegistry.INSTANCE.register(false, RgbCommand::register);
-		blockEntity = BlockEntityType.Builder.create(RgbBlockEntity::new).build(null);
+		blockEntity = BlockEntityType.Builder.create(RgbBlockEntity::new, getRgbBlocks()).build(null);
 
 		Registry.register(Registry.BLOCK_ENTITY, new Identifier("rgbblock", "rgbblock"), blockEntity);
 	}
@@ -127,6 +127,10 @@ public class RgbBlocks implements ModInitializer {
 		BlockItem blockItem = new BlockItem(block2, new Item.Settings().itemGroup(itemGroup));
 		Registry.register(Registry.ITEM, new Identifier("rgbblocks", name), blockItem);
 		return block2;
+	}
+
+	public Block[] getRgbBlocks() {
+		return new Block[]{rgbTerracotta,rgbWool,rgbPlanks,rgbConcrete,rgbConcretePowder,rgbGlass,rgbTerracottaSlab,rgbWoolSlab,rgbPlanksSlab,rgbConcreteSlab,rgbGlassSlab,rgbTerracottaStairs,rgbWoolStairs,rgbPlanksStairs,rgbConcreteStairs,rgbGlassStairs,rgbCarpet};
 	}
 
 }
