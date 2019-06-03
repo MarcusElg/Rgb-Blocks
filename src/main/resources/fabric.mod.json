@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "rgbblocks",
-  "version": "2.0.3",
+  "version": "2.0.4",
 
   "name": "Rgb Blocks",
   "description": "Wool, terracotta, concrete and more in all the colours!",
@@ -28,8 +28,6 @@
       "rgbblocks.RgbBlocksClient"
     ]
   },
-  "mixins": [
-  ],
 
   "requires": {
     "fabricloader": ">=0.4.0",

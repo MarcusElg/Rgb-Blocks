@@ -171,8 +171,8 @@ public class RgbCommand {
 				hitBlockPos.add(0, 0, -1);
 			}
 			
-			if (hitResult.getType() == Type.BLOCK && player.getWorld().getBlockState(hitBlockPos).getBlock().asItem().getItemGroup() == RgbBlocks.itemGroup) {
-				RgbBlockEntity blockEntity = (RgbBlockEntity) player.getWorld().getBlockEntity(hitBlockPos);
+			if (hitResult.getType() == Type.BLOCK && player.world.getBlockState(hitBlockPos).getBlock().asItem().getItemGroup() == RgbBlocks.itemGroup) {
+				RgbBlockEntity blockEntity = (RgbBlockEntity) player.world.getBlockEntity(hitBlockPos);
 	        	
 	        	CompoundTag tag = itemStack.getTag();
 				if (tag == null) {
