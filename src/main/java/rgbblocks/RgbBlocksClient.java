@@ -33,7 +33,8 @@ public class RgbBlocksClient implements ClientModInitializer {
 	public void registerBlockColour(Block block) {
 		ColorProviderRegistry.BLOCK.register((block3, blockView, position, layer) -> {
 			RgbBlockEntity rgbBlockEntity = (RgbBlockEntity) blockView.getBlockEntity(position);
-			if (rgbBlockEntity != null) {
+			
+			if (rgbBlockEntity != null && rgbBlockEntity.getType() == RgbBlocks.blockEntity) {
 				return Color.HSBtoRGB(rgbBlockEntity.hue / 255f, rgbBlockEntity.saturation / 255f,
 						rgbBlockEntity.brightness / 255f);
 			} else {
