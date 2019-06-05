@@ -16,13 +16,13 @@ public class RgbBlocksClient implements ClientModInitializer {
 		registerBlockColour(RgbBlocks.rgbConcrete);
 		registerBlockColour(RgbBlocks.rgbConcretePowder);
 		registerBlockColour(RgbBlocks.rgbCarpet);
-		
+
 		registerBlockColour(RgbBlocks.rgbTerracottaSlab);
 		registerBlockColour(RgbBlocks.rgbWoolSlab);
 		registerBlockColour(RgbBlocks.rgbPlanksSlab);
 		registerBlockColour(RgbBlocks.rgbGlassSlab);
 		registerBlockColour(RgbBlocks.rgbConcreteSlab);
-		
+
 		registerBlockColour(RgbBlocks.rgbTerracottaStairs);
 		registerBlockColour(RgbBlocks.rgbWoolStairs);
 		registerBlockColour(RgbBlocks.rgbPlanksStairs);
@@ -32,11 +32,15 @@ public class RgbBlocksClient implements ClientModInitializer {
 
 	public void registerBlockColour(Block block) {
 		ColorProviderRegistry.BLOCK.register((block3, blockView, position, layer) -> {
-			RgbBlockEntity rgbBlockEntity = (RgbBlockEntity) blockView.getBlockEntity(position);
-			
-			if (rgbBlockEntity != null && rgbBlockEntity.getType() == RgbBlocks.blockEntity) {
-				return Color.HSBtoRGB(rgbBlockEntity.hue / 255f, rgbBlockEntity.saturation / 255f,
-						rgbBlockEntity.brightness / 255f);
+
+			if (blockView.getBlockEntity(position).getType() == RgbBlocks.blockEntity) {
+				RgbBlockEntity rgbBlockEntity = (RgbBlockEntity) blockView.getBlockEntity(position);
+				if (rgbBlockEntity != null) {
+					return Color.HSBtoRGB(rgbBlockEntity.hue / 255f, rgbBlockEntity.saturation / 255f,
+							rgbBlockEntity.brightness / 255f);
+				} else {
+					return Color.HSBtoRGB(0, 0, 1);
+				}
 			} else {
 				return Color.HSBtoRGB(0, 0, 1);
 			}
