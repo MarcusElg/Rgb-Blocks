@@ -1,8 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "rgbblocks",
-  "version": "2.0.5",
-
+  "version": "2.0.6",
   "name": "Rgb Blocks",
   "description": "Wool, terracotta, concrete and more in all the colours!",
   "authors": [
@@ -16,8 +15,6 @@
     "sources": "https://github.com/MCrafterzz/Rgb-Blocks",
     "issues": "https://github.com/MCrafterzz/Rgb-Blocks/issues"
   },
-
-  "license": "Creative Commons 0 1.0 Universal",
 
   "environment": "*",
   "entrypoints": {

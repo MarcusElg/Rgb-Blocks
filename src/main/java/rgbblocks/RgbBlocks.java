@@ -91,7 +91,7 @@ public class RgbBlocks implements ModInitializer {
 	private Block registerBlock(Block block, String name, BlockRenderLayer blockRenderLayer) {
 		Block block2 = new RgbBlock(Block.Settings.copy(block), blockRenderLayer);
 		Registry.register(Registry.BLOCK, new Identifier("rgbblocks", name), block2);
-		BlockItem blockItem = new BlockItem(block2, new Item.Settings().itemGroup(itemGroup));
+		BlockItem blockItem = new BlockItem(block2, new Item.Settings().group(itemGroup));
 		Registry.register(Registry.ITEM, new Identifier("rgbblocks", name), blockItem);
 		return block2;
 	}
@@ -103,7 +103,7 @@ public class RgbBlocks implements ModInitializer {
 	private Block registerSlab(Block block, String name, BlockRenderLayer blockRenderLayer) {
 		Block block2 = new RgbSlab(Block.Settings.copy(block), blockRenderLayer);
 		Registry.register(Registry.BLOCK, new Identifier("rgbblocks", name + "_slab"), block2);
-		BlockItem blockItem = new BlockItem(block2, new Item.Settings().itemGroup(itemGroup));
+		BlockItem blockItem = new BlockItem(block2, new Item.Settings().group(itemGroup));
 		Registry.register(Registry.ITEM, new Identifier("rgbblocks", name + "_slab"), blockItem);
 		return block2;
 	}
@@ -116,7 +116,7 @@ public class RgbBlocks implements ModInitializer {
 			BlockRenderLayer blockRenderLayer) {
 		Block block2 = new RgbStairs(baseBlockState, Block.Settings.copy(block), blockRenderLayer);
 		Registry.register(Registry.BLOCK, new Identifier("rgbblocks", name + "_stairs"), block2);
-		BlockItem blockItem = new BlockItem(block2, new Item.Settings().itemGroup(itemGroup));
+		BlockItem blockItem = new BlockItem(block2, new Item.Settings().group(itemGroup));
 		Registry.register(Registry.ITEM, new Identifier("rgbblocks", name + "_stairs"), blockItem);
 		return block2;
 	}
@@ -124,13 +124,15 @@ public class RgbBlocks implements ModInitializer {
 	private Block registerCarpet(Block block, String name) {
 		Block block2 = new RgbCarpet(Block.Settings.copy(block));
 		Registry.register(Registry.BLOCK, new Identifier("rgbblocks", name), block2);
-		BlockItem blockItem = new BlockItem(block2, new Item.Settings().itemGroup(itemGroup));
+		BlockItem blockItem = new BlockItem(block2, new Item.Settings().group(itemGroup));
 		Registry.register(Registry.ITEM, new Identifier("rgbblocks", name), blockItem);
 		return block2;
 	}
 
 	public Block[] getRgbBlocks() {
-		return new Block[]{rgbTerracotta,rgbWool,rgbPlanks,rgbConcrete,rgbConcretePowder,rgbGlass,rgbTerracottaSlab,rgbWoolSlab,rgbPlanksSlab,rgbConcreteSlab,rgbGlassSlab,rgbTerracottaStairs,rgbWoolStairs,rgbPlanksStairs,rgbConcreteStairs,rgbGlassStairs,rgbCarpet};
+		return new Block[] { rgbTerracotta, rgbWool, rgbPlanks, rgbConcrete, rgbConcretePowder, rgbGlass,
+				rgbTerracottaSlab, rgbWoolSlab, rgbPlanksSlab, rgbConcreteSlab, rgbGlassSlab, rgbTerracottaStairs,
+				rgbWoolStairs, rgbPlanksStairs, rgbConcreteStairs, rgbGlassStairs, rgbCarpet };
 	}
 
 }

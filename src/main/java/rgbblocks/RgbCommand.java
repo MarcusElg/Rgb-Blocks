@@ -85,7 +85,7 @@ public class RgbCommand {
 		int saturation = IntegerArgumentType.getInteger(commandSource, "saturation");
 		int brightness = IntegerArgumentType.getInteger(commandSource, "brightness");
 
-		if (itemStack != null && itemStack.getItem().getItemGroup() == RgbBlocks.itemGroup) {
+		if (itemStack != null && itemStack.getItem().getGroup() == RgbBlocks.itemGroup) {
 			CompoundTag tag = itemStack.getTag();
 			if (tag == null) {
 				tag = new CompoundTag();
@@ -117,7 +117,7 @@ public class RgbCommand {
 		int saturation = IntegerArgumentType.getInteger(commandSource, "saturation");
 		int brightness = IntegerArgumentType.getInteger(commandSource, "brightness");
 
-		if (itemStack != null && itemStack.getItem().getItemGroup() == RgbBlocks.itemGroup) {
+		if (itemStack != null && itemStack.getItem().getGroup() == RgbBlocks.itemGroup) {
 			CompoundTag tag = itemStack.getTag();
 			if (tag == null) {
 				tag = new CompoundTag();
@@ -158,7 +158,7 @@ public class RgbCommand {
 		ItemStack itemStack = commandSource.getSource().getPlayer().getStackInHand(Hand.MAIN_HAND);
 		ServerPlayerEntity player = commandSource.getSource().getPlayer();
 
-		if (itemStack != null && itemStack.getItem().getItemGroup() == RgbBlocks.itemGroup) {
+		if (itemStack != null && itemStack.getItem().getGroup() == RgbBlocks.itemGroup) {
 			Vec3d endPoint = player.getCameraPosVec(1).add(player.getRotationVec(1).x * 5, player.getRotationVec(1).y * 5, player.getRotationVec(1).z * 5);
 			BlockHitResult hitResult = player.getServerWorld().rayTrace(new RayTraceContext(player.getCameraPosVec(1), endPoint, ShapeType.OUTLINE, FluidHandling.NONE, player));
 			BlockPos hitBlockPos = hitResult.getBlockPos();
@@ -171,7 +171,7 @@ public class RgbCommand {
 				hitBlockPos.add(0, 0, -1);
 			}
 			
-			if (hitResult.getType() == Type.BLOCK && player.world.getBlockState(hitBlockPos).getBlock().asItem().getItemGroup() == RgbBlocks.itemGroup) {
+			if (hitResult.getType() == Type.BLOCK && player.world.getBlockState(hitBlockPos).getBlock().asItem().getGroup() == RgbBlocks.itemGroup) {
 				RgbBlockEntity blockEntity = (RgbBlockEntity) player.world.getBlockEntity(hitBlockPos);
 	        	
 	        	CompoundTag tag = itemStack.getTag();
