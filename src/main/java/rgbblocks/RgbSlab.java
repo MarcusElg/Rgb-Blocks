@@ -3,11 +3,9 @@ package rgbblocks;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.block.BlockEntityProvider;
-import net.minecraft.block.BlockRenderLayer;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.SlabBlock;
 import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.container.NameableContainerProvider;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundTag;
@@ -16,28 +14,15 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 
 public class RgbSlab extends SlabBlock implements BlockEntityProvider {
-
-	public BlockRenderLayer blockRenderLayer;
 	
-	public RgbSlab(Settings block$Settings_1, BlockRenderLayer blockRenderLayer) {
+	public RgbSlab(Settings block$Settings_1) {
 		super(block$Settings_1);
-		this.blockRenderLayer = blockRenderLayer;
 	}
 
-	public BlockRenderLayer getRenderLayer() {
-		return blockRenderLayer;
-	}
-	
-	public boolean onBlockAction(BlockState blockState_1, World world_1, BlockPos blockPos_1, int int_1, int int_2) {
-		super.onBlockAction(blockState_1, world_1, blockPos_1, int_1, int_2);
-		BlockEntity blockEntity_1 = world_1.getBlockEntity(blockPos_1);
-		return blockEntity_1 == null ? false : blockEntity_1.onBlockAction(int_1, int_2);
-	}
-
-	public NameableContainerProvider createContainerProvider(BlockState blockState_1, World world_1,
-			BlockPos blockPos_1) {
-		BlockEntity blockEntity_1 = world_1.getBlockEntity(blockPos_1);
-		return blockEntity_1 instanceof NameableContainerProvider ? (NameableContainerProvider) blockEntity_1 : null;
+	public boolean onSyncedBlockEvent(BlockState blockState, World world, BlockPos blockPos, int i, int j) {
+		super.onSyncedBlockEvent(blockState, world, blockPos, i, j);
+		BlockEntity blockEntity_1 = world.getBlockEntity(blockPos);
+		return blockEntity_1 == null ? false : blockEntity_1.onSyncedBlockEvent(i, j);
 	}
 
 	public BlockEntity createBlockEntity(BlockView var1) {

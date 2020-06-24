@@ -2,13 +2,16 @@ package rgbblocks;
 
 import java.awt.Color;
 import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.render.ColorProviderRegistry;
 import net.minecraft.block.Block;
+import net.minecraft.client.render.RenderLayer;
 
 public class RgbBlocksClient implements ClientModInitializer {
 
 	@Override
 	public void onInitializeClient() {
+		// Colours
 		registerBlockColour(RgbBlocks.rgbTerracotta);
 		registerBlockColour(RgbBlocks.rgbWool);
 		registerBlockColour(RgbBlocks.rgbPlanks);
@@ -28,6 +31,12 @@ public class RgbBlocksClient implements ClientModInitializer {
 		registerBlockColour(RgbBlocks.rgbPlanksStairs);
 		registerBlockColour(RgbBlocks.rgbGlassStairs);
 		registerBlockColour(RgbBlocks.rgbConcreteStairs);
+
+		// Render layers
+		BlockRenderLayerMap.INSTANCE.putBlock(RgbBlocks.rgbGlass, RenderLayer.getTranslucent());
+		BlockRenderLayerMap.INSTANCE.putBlock(RgbBlocks.rgbGlassSlab, RenderLayer.getTranslucent());
+		BlockRenderLayerMap.INSTANCE.putBlock(RgbBlocks.rgbGlassStairs, RenderLayer.getTranslucent());
+		BlockRenderLayerMap.INSTANCE.putBlock(RgbBlocks.rgbCarpet, RenderLayer.getCutout());
 	}
 
 	public void registerBlockColour(Block block) {
@@ -45,8 +54,8 @@ public class RgbBlocksClient implements ClientModInitializer {
 
 		ColorProviderRegistry.ITEM.register((item, layer) -> {
 			if (item.hasTag() == true) {
-				if (item.getTag().containsKey("hue") && item.getTag().containsKey("saturation")
-						&& item.getTag().containsKey("brightness")) {
+				if (item.getTag().contains("hue") && item.getTag().contains("saturation")
+						&& item.getTag().contains("brightness")) {
 					return Color.HSBtoRGB(item.getTag().getInt("hue") / 255f, item.getTag().getInt("saturation") / 255f,
 							item.getTag().getInt("brightness") / 255f);
 				} else {

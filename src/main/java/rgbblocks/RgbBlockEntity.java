@@ -1,6 +1,7 @@
 package rgbblocks;
 
 import net.fabricmc.fabric.api.block.entity.BlockEntityClientSerializable;
+import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.nbt.CompoundTag;
 
@@ -14,8 +15,8 @@ public class RgbBlockEntity extends BlockEntity implements BlockEntityClientSeri
 		super(RgbBlocks.blockEntity);
 	}
 
-	public void fromTag(CompoundTag compoundTag_1) {
-		super.fromTag(compoundTag_1);
+	public void fromTag(BlockState blockState, CompoundTag compoundTag_1) {
+		super.fromTag(blockState, compoundTag_1);
 		this.hue = compoundTag_1.getInt("hue");
 		this.saturation = compoundTag_1.getInt("saturation");
 		this.brightness = compoundTag_1.getInt("brightness");
@@ -31,7 +32,7 @@ public class RgbBlockEntity extends BlockEntity implements BlockEntityClientSeri
 
 	@Override
 	public void fromClientTag(CompoundTag compoundTag_1) {
-		super.fromTag(compoundTag_1);
+		super.fromTag(getWorld().getBlockState(getPos()), compoundTag_1);
 		this.hue = compoundTag_1.getInt("hue");
 		this.saturation = compoundTag_1.getInt("saturation");
 		this.brightness = compoundTag_1.getInt("brightness");

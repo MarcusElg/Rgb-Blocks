@@ -31,47 +31,47 @@ public class RgbCommand {
 				.register(CommandManager.literal("setcolor").then(CommandManager.literal("set").executes(context -> {
 					ServerPlayerEntity player = context.getSource().getPlayer();
 					TranslatableText text = new TranslatableText("command.rgb.nocolourtype");
-					text.setStyle(new Style().setColor(Formatting.RED));
-					player.addChatMessage(text, false);
+					text.setStyle(Style.EMPTY.withColor(Formatting.RED));
+					player.sendMessage(text, false);
 					return 0;
 				}).then(CommandManager.literal("hsv").executes(context -> {
 					ServerPlayerEntity player = context.getSource().getPlayer();
 					TranslatableText text = new TranslatableText("command.rgb.toofewarguments");
-					text.setStyle(new Style().setColor(Formatting.RED));
-					player.addChatMessage(text, false);
+					text.setStyle(Style.EMPTY.withColor(Formatting.RED));
+					player.sendMessage(text, false);
 					return 0;
 				}).then(CommandManager.argument("hue", IntegerArgumentType.integer(0, 255)).executes(context -> {
 					ServerPlayerEntity player = context.getSource().getPlayer();
 					TranslatableText text = new TranslatableText("command.rgb.toofewarguments");
-					text.setStyle(new Style().setColor(Formatting.RED));
-					player.addChatMessage(text, false);
+					text.setStyle(Style.EMPTY.withColor(Formatting.RED));
+					player.sendMessage(text, false);
 					return 0;
 				}).then(CommandManager.argument("saturation", IntegerArgumentType.integer(0, 255)).executes(context -> {
 					ServerPlayerEntity player = context.getSource().getPlayer();
 					TranslatableText text = new TranslatableText("command.rgb.toofewarguments");
-					text.setStyle(new Style().setColor(Formatting.RED));
-					player.addChatMessage(text, false);
+					text.setStyle(Style.EMPTY.withColor(Formatting.RED));
+					player.sendMessage(text, false);
 					return 0;
 				}).then(CommandManager.argument("brightness", IntegerArgumentType.integer(0, 255))
 						.executes(RgbCommand::setColorHsv))))).then(CommandManager.literal("rgb").executes(context -> {
 							ServerPlayerEntity player = context.getSource().getPlayer();
 							TranslatableText text = new TranslatableText("command.rgb.toofewarguments");
-							text.setStyle(new Style().setColor(Formatting.RED));
-							player.addChatMessage(text, false);
+							text.setStyle(Style.EMPTY.withColor(Formatting.RED));
+							player.sendMessage(text, false);
 							return 0;
 						}).then(CommandManager.argument("red", IntegerArgumentType.integer(0, 255))
 								.executes(context -> {
 									ServerPlayerEntity player = context.getSource().getPlayer();
 									TranslatableText text = new TranslatableText("command.rgb.toofewarguments");
-									text.setStyle(new Style().setColor(Formatting.RED));
-									player.addChatMessage(text, false);
+									text.setStyle(Style.EMPTY.withColor(Formatting.RED));
+									player.sendMessage(text, false);
 									return 0;
 								}).then(CommandManager.argument("green", IntegerArgumentType.integer(0, 255))
 										.executes(context -> {
 											ServerPlayerEntity player = context.getSource().getPlayer();
 											TranslatableText text = new TranslatableText("command.rgb.toofewarguments");
-											text.setStyle(new Style().setColor(Formatting.RED));
-											player.addChatMessage(text, false);
+											text.setStyle(Style.EMPTY.withColor(Formatting.RED));
+											player.sendMessage(text, false);
 											return 0;
 										})
 										.then(CommandManager.argument("blue", IntegerArgumentType.integer(0, 255))
@@ -79,22 +79,22 @@ public class RgbCommand {
 						.then(CommandManager.literal("add").executes(context -> {
 							ServerPlayerEntity player = context.getSource().getPlayer();
 							TranslatableText text = new TranslatableText("command.rgb.toofewarguments");
-							text.setStyle(new Style().setColor(Formatting.RED));
-							player.addChatMessage(text, false);
+							text.setStyle(Style.EMPTY.withColor(Formatting.RED));
+							player.sendMessage(text, false);
 							return 0;
 						}).then(CommandManager.argument("hue", IntegerArgumentType.integer(-255, 255))
 								.executes(context -> {
 									ServerPlayerEntity player = context.getSource().getPlayer();
 									TranslatableText text = new TranslatableText("command.rgb.toofewarguments");
-									text.setStyle(new Style().setColor(Formatting.RED));
-									player.addChatMessage(text, false);
+									text.setStyle(Style.EMPTY.withColor(Formatting.RED));
+									player.sendMessage(text, false);
 									return 0;
 								}).then(CommandManager.argument("saturation", IntegerArgumentType.integer(-255, 255))
 										.executes(context -> {
 											ServerPlayerEntity player = context.getSource().getPlayer();
 											TranslatableText text = new TranslatableText("command.rgb.toofewarguments");
-											text.setStyle(new Style().setColor(Formatting.RED));
-											player.addChatMessage(text, false);
+											text.setStyle(Style.EMPTY.withColor(Formatting.RED));
+											player.sendMessage(text, false);
 											return 0;
 										})
 										.then(CommandManager
@@ -125,14 +125,14 @@ public class RgbCommand {
 
 			ServerPlayerEntity player = commandSource.getSource().getPlayer();
 			TranslatableText text = new TranslatableText("command.rgb.sucess");
-			player.addChatMessage(text, false);
+			player.sendMessage(text, false);
 
 			return 1;
 		} else {
 			ServerPlayerEntity player = commandSource.getSource().getPlayer();
 			TranslatableText text = new TranslatableText("command.rgb.wrongitem");
-			text.setStyle(new Style().setColor(Formatting.RED));
-			player.addChatMessage(text, false);
+			text.setStyle(Style.EMPTY.withColor(Formatting.RED));
+			player.sendMessage(text, false);
 			return 0;
 		}
 	}
@@ -157,14 +157,14 @@ public class RgbCommand {
 
 			ServerPlayerEntity player = commandSource.getSource().getPlayer();
 			TranslatableText text = new TranslatableText("command.rgb.sucess");
-			player.addChatMessage(text, false);
+			player.sendMessage(text, false);
 
 			return 1;
 		} else {
 			ServerPlayerEntity player = commandSource.getSource().getPlayer();
 			TranslatableText text = new TranslatableText("command.rgb.wrongitem");
-			text.setStyle(new Style().setColor(Formatting.RED));
-			player.addChatMessage(text, false);
+			text.setStyle(Style.EMPTY.withColor(Formatting.RED));
+			player.sendMessage(text, false);
 			return 0;
 		}
 	}
@@ -200,14 +200,14 @@ public class RgbCommand {
 
 			ServerPlayerEntity player = commandSource.getSource().getPlayer();
 			TranslatableText text = new TranslatableText("command.rgb.sucess");
-			player.addChatMessage(text, false);
+			player.sendMessage(text, false);
 
 			return 1;
 		} else {
 			ServerPlayerEntity player = commandSource.getSource().getPlayer();
 			TranslatableText text = new TranslatableText("command.rgb.wrongitem");
-			text.setStyle(new Style().setColor(Formatting.RED));
-			player.addChatMessage(text, false);
+			text.setStyle(Style.EMPTY.withColor(Formatting.RED));
+			player.sendMessage(text, false);
 			return 0;
 		}
 	}
@@ -247,19 +247,19 @@ public class RgbCommand {
 				itemStack.setTag(tag);
 
 				TranslatableText text = new TranslatableText("command.rgb.sucess");
-				player.addChatMessage(text, false);
+				player.sendMessage(text, false);
 
 				return 1;
 			} else {
 				TranslatableText text = new TranslatableText("command.rgb.wrongblock");
-				text.setStyle(new Style().setColor(Formatting.RED));
-				player.addChatMessage(text, false);
+				text.setStyle(Style.EMPTY.withColor(Formatting.RED));
+				player.sendMessage(text, false);
 				return 0;
 			}
 		} else {
 			TranslatableText text = new TranslatableText("command.rgb.wrongitem");
-			text.setStyle(new Style().setColor(Formatting.RED));
-			player.addChatMessage(text, false);
+			text.setStyle(Style.EMPTY.withColor(Formatting.RED));
+			player.sendMessage(text, false);
 			return 0;
 		}
 	}

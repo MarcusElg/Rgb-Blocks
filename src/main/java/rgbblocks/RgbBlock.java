@@ -2,7 +2,6 @@ package rgbblocks;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.minecraft.block.BlockRenderLayer;
 import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.BlockWithEntity;
@@ -15,16 +14,9 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 
 public class RgbBlock extends BlockWithEntity {
-
-	public BlockRenderLayer blockRenderLayer;
-
-	public RgbBlock(Settings block$Settings_1, BlockRenderLayer blockRenderLayer) {
+	
+	public RgbBlock(Settings block$Settings_1) {
 		super(block$Settings_1);
-		this.blockRenderLayer = blockRenderLayer;
-	}
-
-	public BlockRenderLayer getRenderLayer() {
-		return blockRenderLayer;
 	}
 
 	public BlockRenderType getRenderType(BlockState blockState_1) {

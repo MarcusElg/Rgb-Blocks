@@ -1,14 +1,11 @@
 {
   "schemaVersion": 1,
   "id": "rgbblocks",
-  "version": "2.1.0",
+  "version": "2.1.2",
   "name": "Rgb Blocks",
   "description": "Wool, terracotta, concrete and more in all the colours!",
   "authors": [
     "MCrafterzz"
-  ],
-  "contributors": [
-    "Shnupbups"
   ],
   "contact": {
     "homepage": "https://minecraft.curseforge.com/projects/rgb-blocks",

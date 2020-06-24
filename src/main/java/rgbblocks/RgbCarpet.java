@@ -1,21 +1,16 @@
 package rgbblocks;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockRenderType;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.BlockWithEntity;
-import net.minecraft.block.Blocks;
+import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.entity.EntityContext;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
-import net.minecraft.world.IWorld;
-import net.minecraft.world.ViewableWorld;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldAccess;
+import net.minecraft.world.WorldView;
 
 public class RgbCarpet extends BlockWithEntity {
 	protected static final VoxelShape SHAPE = Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 1.0D, 16.0D);
@@ -24,8 +19,7 @@ public class RgbCarpet extends BlockWithEntity {
 		super(block$Settings_1);
 	}
 
-	public VoxelShape getOutlineShape(BlockState blockState_1, BlockView blockView_1, BlockPos blockPos_1,
-			EntityContext entityContext) {
+	public VoxelShape getOutlineShape(BlockState blockState, BlockView blockView, BlockPos blockPos, ShapeContext shapeContext) {
 		return SHAPE;
 	}
 
@@ -33,15 +27,13 @@ public class RgbCarpet extends BlockWithEntity {
 		return BlockRenderType.MODEL;
 	}
 	
-	public BlockState getStateForNeighborUpdate(BlockState blockState_1, Direction direction_1, BlockState blockState_2,
-			IWorld iWorld_1, BlockPos blockPos_1, BlockPos blockPos_2) {
-		return !blockState_1.canPlaceAt(iWorld_1, blockPos_1) ? Blocks.AIR.getDefaultState()
-				: super.getStateForNeighborUpdate(blockState_1, direction_1, blockState_2, iWorld_1, blockPos_1,
-						blockPos_2);
+	public BlockState getStateForNeighborUpdate(BlockState blockState, Direction direction, BlockState blockState2, WorldAccess worldAccess, BlockPos blockPos, BlockPos blockPos2) {
+		return !blockState.canPlaceAt(worldAccess, blockPos) ? Blocks.AIR.getDefaultState()
+				: super.getStateForNeighborUpdate(blockState, direction, blockState2, worldAccess, blockPos, blockPos2);
 	}
 
-	public boolean canPlaceAt(BlockState blockState_1, ViewableWorld viewableWorld_1, BlockPos blockPos_1) {
-		return !viewableWorld_1.isAir(blockPos_1.down());
+	public boolean canPlaceAt(WorldView worldView, BlockPos blockPos) {
+		return !worldView.isAir(blockPos.down(1));
 	}
 
 	@Override

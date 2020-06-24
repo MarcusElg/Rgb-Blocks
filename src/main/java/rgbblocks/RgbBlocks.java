@@ -5,7 +5,6 @@ import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.registry.CommandRegistry;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockRenderLayer;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.entity.BlockEntityType;
@@ -52,20 +51,19 @@ public class RgbBlocks implements ModInitializer {
 		rgbPlanks = registerBlock(Blocks.BIRCH_PLANKS, "planks");
 		rgbConcrete = registerBlock(Blocks.WHITE_CONCRETE, "concrete");
 		rgbConcretePowder = registerBlock(Blocks.WHITE_CONCRETE_POWDER, "concrete_powder");
-		rgbGlass = registerBlock(Blocks.WHITE_STAINED_GLASS, "glass", BlockRenderLayer.TRANSLUCENT);
+		rgbGlass = registerBlock(Blocks.WHITE_STAINED_GLASS, "glass");
 
 		rgbTerracottaSlab = registerSlab(Blocks.WHITE_TERRACOTTA, "terracotta");
 		rgbWoolSlab = registerSlab(Blocks.WHITE_WOOL, "wool");
 		rgbPlanksSlab = registerSlab(Blocks.BIRCH_PLANKS, "planks");
 		rgbConcreteSlab = registerSlab(Blocks.WHITE_CONCRETE, "concrete");
-		rgbGlassSlab = registerSlab(Blocks.WHITE_STAINED_GLASS, "glass", BlockRenderLayer.TRANSLUCENT);
+		rgbGlassSlab = registerSlab(Blocks.WHITE_STAINED_GLASS, "glass");
 
 		rgbTerracottaStairs = registerStairs(rgbTerracotta.getDefaultState(), Blocks.WHITE_TERRACOTTA, "terracotta");
 		rgbWoolStairs = registerStairs(rgbWool.getDefaultState(), Blocks.WHITE_WOOL, "wool");
 		rgbPlanksStairs = registerStairs(rgbPlanks.getDefaultState(), Blocks.BIRCH_PLANKS, "planks");
 		rgbConcreteStairs = registerStairs(rgbConcrete.getDefaultState(), Blocks.WHITE_CONCRETE, "concrete");
-		rgbGlassStairs = registerStairs(rgbGlass.getDefaultState(), Blocks.WHITE_STAINED_GLASS, "glass",
-				BlockRenderLayer.TRANSLUCENT);
+		rgbGlassStairs = registerStairs(rgbGlass.getDefaultState(), Blocks.WHITE_STAINED_GLASS, "glass");
 
 		rgbCarpet = registerCarpet(Blocks.WHITE_CARPET, "carpet");
 
@@ -81,15 +79,11 @@ public class RgbBlocks implements ModInitializer {
 		CommandRegistry.INSTANCE.register(false, RgbCommand::register);
 		blockEntity = BlockEntityType.Builder.create(RgbBlockEntity::new, getRgbBlocks()).build(null);
 
-		Registry.register(Registry.BLOCK_ENTITY, new Identifier("rgbblock", "rgbblock"), blockEntity);
+		Registry.register(Registry.BLOCK_ENTITY_TYPE, new Identifier("rgbblock", "rgbblock"), blockEntity);
 	}
 
 	private Block registerBlock(Block block, String name) {
-		return registerBlock(block, name, BlockRenderLayer.SOLID);
-	}
-
-	private Block registerBlock(Block block, String name, BlockRenderLayer blockRenderLayer) {
-		Block block2 = new RgbBlock(Block.Settings.copy(block), blockRenderLayer);
+		Block block2 = new RgbBlock(Block.Settings.copy(block));
 		Registry.register(Registry.BLOCK, new Identifier("rgbblocks", name), block2);
 		BlockItem blockItem = new BlockItem(block2, new Item.Settings().group(itemGroup));
 		Registry.register(Registry.ITEM, new Identifier("rgbblocks", name), blockItem);
@@ -97,11 +91,7 @@ public class RgbBlocks implements ModInitializer {
 	}
 
 	private Block registerSlab(Block block, String name) {
-		return registerSlab(block, name, BlockRenderLayer.CUTOUT);
-	}
-
-	private Block registerSlab(Block block, String name, BlockRenderLayer blockRenderLayer) {
-		Block block2 = new RgbSlab(Block.Settings.copy(block), blockRenderLayer);
+		Block block2 = new RgbSlab(Block.Settings.copy(block));
 		Registry.register(Registry.BLOCK, new Identifier("rgbblocks", name + "_slab"), block2);
 		BlockItem blockItem = new BlockItem(block2, new Item.Settings().group(itemGroup));
 		Registry.register(Registry.ITEM, new Identifier("rgbblocks", name + "_slab"), blockItem);
@@ -109,12 +99,7 @@ public class RgbBlocks implements ModInitializer {
 	}
 
 	private Block registerStairs(BlockState baseBlockState, Block block, String name) {
-		return registerStairs(baseBlockState, block, name, BlockRenderLayer.CUTOUT);
-	}
-
-	private Block registerStairs(BlockState baseBlockState, Block block, String name,
-			BlockRenderLayer blockRenderLayer) {
-		Block block2 = new RgbStairs(baseBlockState, Block.Settings.copy(block), blockRenderLayer);
+		Block block2 = new RgbStairs(baseBlockState, Block.Settings.copy(block));
 		Registry.register(Registry.BLOCK, new Identifier("rgbblocks", name + "_stairs"), block2);
 		BlockItem blockItem = new BlockItem(block2, new Item.Settings().group(itemGroup));
 		Registry.register(Registry.ITEM, new Identifier("rgbblocks", name + "_stairs"), blockItem);
