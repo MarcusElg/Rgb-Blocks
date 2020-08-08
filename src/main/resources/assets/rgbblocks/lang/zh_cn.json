@@ -1,0 +1,30 @@
+{
+	"itemGroup.rgbblocks.rgbblocks":"RGB 方块 §7(§4R§2G§9B§7 Blocks)",
+
+	"block.rgbblocks.terracotta":"RGB 陶瓦",
+	"block.rgbblocks.wool":"RGB 羊毛",
+	"block.rgbblocks.carpet":"RGB 地毯",
+	"block.rgbblocks.planks":"RGB 木板",
+	"block.rgbblocks.glass":"RGB 玻璃",
+	"block.rgbblocks.concrete":"RGB 混凝土",
+	"block.rgbblocks.concrete_powder":"RGB 混凝土粉末",
+	
+	"block.rgbblocks.terracotta_slab":"RGB 陶瓦台阶",
+	"block.rgbblocks.wool_slab":"RGB 羊毛台阶",
+	"block.rgbblocks.planks_slab":"RGB 木板台阶",
+	"block.rgbblocks.glass_slab":"RGB 玻璃台阶",
+	"block.rgbblocks.concrete_slab":"RGB 混凝土台阶",
+	
+	"block.rgbblocks.terracotta_stairs":"RGB 陶瓦楼梯",
+	"block.rgbblocks.wool_stairs":"RGB 羊毛楼梯",
+	"block.rgbblocks.planks_stairs":"RGB 木板楼梯",
+	"block.rgbblocks.glass_stairs":"RGB 玻璃楼梯",
+	"block.rgbblocks.concrete_stairs":"RGB 混凝土楼梯",
+	
+	"command.rgb.toofewarguments": "缺少参数 §7(需要 3 个整数)",
+	"command.rgb.nosubcommand":"期望值为 set, add 或 get",
+	"command.rgb.wrongitem": "你手中的物品不是 RGB 方块",
+	"command.rgb.wrongblock":"你指向的方块不是 RGB 方块",
+	"command.rgb.nocolourtype":"你需要选择一种色彩模式 §7(RGB 或 HSV)",
+	"command.rgb.sucess": "成功改变了你手中物品的颜色"
+}
